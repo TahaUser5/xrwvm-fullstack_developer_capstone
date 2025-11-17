@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - Best Cars</title>
+    <!-- Link to external stylesheets -->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Custom styles for the contact page */
+        .contact-card-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem auto;
+            padding: 1rem;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .contact-icon-container {
+            flex-basis: 30%;
+            text-align: center;
+            padding: 1rem;
+            min-width: 200px; /* Ensure icon container has a minimum width */
+        }
+
+        .contact-icon {
+            width: 120px;
+            height: 120px;
+            fill: darkturquoise;
+        }
+
+        .contact-info-container {
+            flex-basis: 70%;
+            border-left: 1px solid #ddd;
+            padding: 1rem 1rem 1rem 3rem;
+            min-width: 300px; /* Ensure info container has a minimum width */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-card-content {
+                flex-direction: column;
+            }
+            .contact-info-container {
+                border-left: none;
+                border-top: 1px solid #ddd;
+                padding: 2rem 1rem 1rem 1rem;
+                text-align: center;
+                width: 100%;
+            }
+            .contact-icon-container {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .contact-info-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-info-item h5 {
+            font-weight: bold;
+            color: #004085; /* A darker blue for headings */
+            font-size: 1.1rem;
+        }
+
+        .contact-info-item p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .contact-info-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .contact-info-item a:hover {
+            color: darkturquoise;
+        }
+
+        .banner-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+            <h2 style="padding-right: 5%;">Dealerships</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Set "Contact Us" as the active link -->
+                        <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Card -->
+    <div class="card" style="width: 80%; margin: 3% auto; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        
+        <!-- Banner Image -->
+        <img class="banner-image" src="https://placehold.co/1200x300/E8E8E8/AAA?text=Best+Cars+Dealership" alt="Car dealership lot">
+
+        <!-- Two-column content area -->
+        <div class="contact-card-content">
+            
+            <!-- Left Column: Icon -->
+            <div class="contact-icon-container">
+                <!-- Inline SVG for the headset icon -->
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 20c-4.963 0-9-4.038-9-9s4.037-9 9-9 9 4.038 9 9-4.037 9-9 9z"/>
+                    <path d="M12 11c-2.206 0-4 1.794-4 4v1h8v-1c0-2.206-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2v-1c0-1.103.897-2 2-2s2 .897 2 2v1c0 1.103-.897 2-2 2z"/>
+                    <path d="M12.001 7C10.067 7 8.5 8.566 8.5 10.5v.5h2v-.5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v.5h2v-.5c0-1.934-1.566-3.5-3.5-3.5z"/>
+                    <path d="M17 12h-2v3h2v-3zM9 12H7v3h2v-3z"/>
+                </svg>
+            </div>
+
+            <!-- Right Column: Contact Info -->
+            <div class="contact-info-container">
+                <div class="contact-info-item">
+                    <h5>Contact Customer Service</h5>
+                    <p><a href="mailto:support@bestcars.com">support@bestcars.com</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <h5>Contact our National Advertising team</h5>
+                    <p><a href="mailto:NationalSales@bestcars.com">NationalSales@bestcars.com</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <h5>Contact our Public Relations team</h5>
+                    <p><a href="mailto:PR@bestcars.com">PR@bestcars.com</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <h5>Contact the bestcars.com offices</h5>
+                    <p><a href="tel:312-611-1111">312-611-1111</a></p>
+                </div>
+                <div class="contact-info-item">
+                    <h5>Become a bestcars.com car dealer</h5>
+                    <p><a href="https://www.growwithbestcars.com" target="_blank">Visit growwithbestcars.com</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
