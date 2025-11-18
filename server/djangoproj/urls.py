@@ -20,9 +20,19 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+     path('admin/', admin.site.urls),
+
+    # Static pages
     path('about/', TemplateView.as_view(template_name="About.html")),
     path('contact/', TemplateView.as_view(template_name="Contact.html")),
+    path('', TemplateView.as_view(template_name="Home.html")),  
+
+    # Backend API routes
     path('djangoapp/', include('djangoapp.urls')),
-    path('', TemplateView.as_view(template_name="Home.html")),
+    
+    # React frontend route for register page
+    path('register/', TemplateView.as_view(template_name="index.html")),
+    
+    # React frontend route for login page
+    path('login/', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

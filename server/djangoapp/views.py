@@ -9,7 +9,7 @@
 # from datetime import datetime
 
 from django.http import JsonResponse
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
@@ -39,13 +39,26 @@ def login_user(request):
     return JsonResponse(data)
 
 # Create a `logout_request` view to handle sign out request
-# def logout_request(request):
-# ...
+def logout_user(request):
+    logout(request)  # Terminate user session
+    data = {"userName": ""}  # Return empty username
+    return JsonResponse(data)
 
 # Create a `registration` view to handle sign up request
-# @csrf_exempt
-# def registration(request):
-# ...
+@csrf_exempt
+def register_user(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        username = data.get("userName")
+        password = data.get("password")
+        email = data.get("email")
+        first_name = data.get("firstName")
+        last_name = data.get("lastName")
+
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({"error": "Already Registered", "status": False})
+
+        
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
