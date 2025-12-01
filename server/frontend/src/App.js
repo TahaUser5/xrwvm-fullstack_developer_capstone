@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPanel from "./components/Login/Login";
